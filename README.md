@@ -31,7 +31,7 @@ This is an example of how to list things you need to use the api and how to inst
    npm install
    ```
 4. Start the Server in Developent or Production
-  ```sh
+   ```sh
    npm run dev or npm start
    ```
 
@@ -39,29 +39,16 @@ This is an example of how to list things you need to use the api and how to inst
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+There are 2 types of API's The Public API's & Private API's
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+Public API are Open to all & public API covers movie searching & sorting API
 
+Private API requires Registraion without registraion on cannot Use Private Services.
+ 
+    - Private API includes adding movies, reviewing movies, voting etc
+    - Private Member Can Make There own movie suggestion
 
-
-<!-- ROADMAP -->
-## Roadmap
-
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a list of proposed features (and known issues).
-
-
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+_For more examples, please import the postman collection [COLLECTION](https://github.com/Mohit8982/fleet-studio-imdb/tree/main/postman)_
 
 
 
