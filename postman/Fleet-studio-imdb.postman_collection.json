@@ -1,0 +1,340 @@
+{
+	"info": {
+		"_postman_id": "7fbd83e1-cd36-4604-85d1-1543e044f3b5",
+		"name": "Fleet-studio-imdb",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "public API",
+			"item": [
+				{
+					"name": "Movie Search",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"fal\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api-user/search-movie",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api-user",
+								"search-movie"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sort movies",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sortType\" : \"DSC\",\r\n    \"sortOn\" : \"release_date\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api-user/sort-movie",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api-user",
+								"sort-movie"
+							]
+						},
+						"description": "{\r\n    \"sortType\" : \"DSC\",\r\n    \"sortOn\" : \"release_date\" || \"downVotes\" || \"release_date\"\r\n}\r\nSort On defines the key name on which we want to sort"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "private API",
+			"item": [
+				{
+					"name": "upvote-downvote",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoibW9oaXQ5MDkwXzkwOTAiLCJpYXQiOjE2MzE0MzExODYsImV4cCI6MTYzMTQzNDc4Nn0.vAA0WYdrLMHmxBwREuN3SgNfrbPEypw-PZxF49Dgf9U",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"vote\" : \"+ve\",\r\n    \"movie_id\" : \"613d22aa3090df12b96e75aa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api-movies/vote-movie",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api-movies",
+								"vote-movie"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set favourite Genre",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoibW9oaXQ5MDkwXzkwOTAiLCJpYXQiOjE2MzE0Mjk3MzAsImV4cCI6MTYzMTQzMzMzMH0.030BsiSVkgoDc1FLcAQv_4l3gbCH_6wGwG3S93W80bk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\" : \"613d0e7688bf3e3875483979\",\r\n    \"genre_id\" : \"613d1bccbe06c65c238a2e69\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api-user/update-intrest",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api-user",
+								"update-intrest"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Recommendation LIst",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoibW9oaXQ5MDkwXzkwOTAiLCJpYXQiOjE2MzE0Mjk3MzAsImV4cCI6MTYzMTQzMzMzMH0.030BsiSVkgoDc1FLcAQv_4l3gbCH_6wGwG3S93W80bk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\" : \"613d0e7688bf3e3875483979\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api-user/get-recomended-movie",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api-user",
+								"get-recomended-movie"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Movie",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoibW9oaXQ5MDkwXzkwOTAiLCJpYXQiOjE2MzE0NDI3NzUsImV4cCI6MTYzMTQ0NjM3NX0.vSf8nIlUfDNGCn_-k84GwLgR_-Uxi8lhY0NsQIu0aBk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"movie_name\"  : \"Black Panther\", \r\n    \"details\"  : \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\", \r\n    \"user_id\"  : \"613d0e7688bf3e3875483979\", \r\n    \"genre_id\"  : \"613d1bccbe06c65c238a2e69\", \r\n    \"release_date\"  : \"2016-03-25\", \r\n    \"image\" : \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api-movies/create-movie",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api-movies",
+								"create-movie"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Movie Details",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoibW9oaXQ5MDkwXzkwOTAiLCJpYXQiOjE2MzE0MDA2NDksImV4cCI6MTYzMTQwNDI0OX0.lrQuaeiI8k37TgOETDPCJVSjufB2v8jpREX-1Vdrohs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"movie_id\" : \"613d22aa3090df12b96e75aa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api-movies/get-movie-details",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api-movies",
+								"get-movie-details"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Genre",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Horror\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api-genre/create-genre",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api-genre",
+								"create-genre"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"mohit9090\",\r\n    \"password\" : \"123123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api-user/login-user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api-user",
+								"login-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"mohit9090\",\r\n    \"password\" : \"123123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api-user/register-user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api-user",
+								"register-user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
