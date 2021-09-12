@@ -86,11 +86,11 @@ exports.login = async (req, res) => {
 
 exports.set_genre = async (req, res) => {
     try {
-        
         const { genre_id, user_id } = req.body;
         const update_intrest = await db.User.updateOne({
             _id: user_id
-        }, { $push: { "fav_genre": genre_id } });
+        }, { $addToSet: { "fav_genre": genre_id } });
+
         return res.json({
             status: 1,
             msgType: "success",

@@ -11,8 +11,9 @@ mongoose.Promise = global.Promise;
 
 
 module.exports = {
-    User: require('../model/users.model'),
+	User: require('../model/users.model'),
 	Movies: require('../model/movies.model'),
 	Genre: require('../model/genre.model'),
-	Review: require('../model/movie_review.model')
+	Review: require('../model/movie_review.model'),
+	SearchMovie: require('../model/movieSearch.model')
 };

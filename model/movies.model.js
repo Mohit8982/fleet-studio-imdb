@@ -18,8 +18,8 @@ const schema = new Schema({
         type: String,
         required: true
     },
-    up_votes:  { type: Boolean, default: false },
-    down_votes: { type: Boolean, default: false },
+    up_votes:  { type: Number, default: false },
+    down_votes: { type: Number, default: false },
     movie_poster: {
         type: String,
         required: false

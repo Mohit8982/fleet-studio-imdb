@@ -1,7 +1,6 @@
 const db = require('../../_helpers/db');
 const genre = require('../genre/genre.service');
 
-
 exports.insert_movie = async (req, res) => {
     try {
 
@@ -26,6 +25,15 @@ exports.insert_movie = async (req, res) => {
         });
 
         const create_movie = await movie_data.save();
+
+        const search_data = new db.SearchMovie({
+            movie_name : movie_name,
+            movie_id: create_movie._id,
+            genre_name: check_genre.genre_name,
+            genre_id: genre_id
+        })
+        
+        await search_data.save();
 
         return res.json({
             status: 1,
@@ -91,10 +99,10 @@ exports.rate_movie = async (req, res) => {
             updateParam = { $inc: { down_votes: 1 } }
         }
 
-        const updateVote = await db.Movies({
+        const updateVote = await db.Movies.updateOne({
             _id: movie_id
         }, updateParam);
-
+       
         return res.json({
             status: 1,
             msgType: 'success',
@@ -114,7 +122,7 @@ exports.movie_details = async (req, res) => {
         const movie_id = req.body.movie_id;
         const movie_details = await Promise.all([
             db.Movies.findOne({ _id: movie_id }),
-            db.Review.find({ movie_id : movie_id })
+            db.Review.find({ movie_id: movie_id })
         ]);
         const details = movie_details[0];
         const reviews = movie_details[1];
@@ -131,7 +139,7 @@ exports.movie_details = async (req, res) => {
             message: error.toString()
         });
     }
-}
+};
 
 const get_review = async (param) => {
     const { movie_id, user_id } = param;
