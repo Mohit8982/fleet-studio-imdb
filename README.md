@@ -1,13 +1,4 @@
 
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-
-
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
@@ -87,12 +78,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 Mohit Barua - [@linkedIn](https://www.linkedin.com/in/mohit-barua-a46873b4/) 
 
 Project Link: [Moive Database](https://github.com/Mohit8982/fleet-studio-imdb.git)
-
-
-
-
-
-
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
